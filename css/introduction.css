@@ -3,7 +3,7 @@
   max-width: 1200px;
   width: 100%;
   height: auto;
-  margin: 100px auto 40px; /* Restored margin-top */
+  margin: 100px auto 40px; /* Restored original margin-top */
   padding: 60px 20px;
   display: flex;
   flex-direction: column;
