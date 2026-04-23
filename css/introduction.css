@@ -283,25 +283,4 @@
   cursor: pointer;
 }
 
-.magic-separator {
-  height: 4px; /* Thinner line */
-  background: linear-gradient(90deg, transparent, #c3700a, transparent);
-  margin: 30px auto;
-  max-width: 800px; /* Shorter for better balance */
-  border-radius: 2px;
-  animation: magic-glow 6s ease-in-out infinite alternate;
-  transform-origin: center;
-}
 
-@keyframes magic-glow {
-  0% {
-    box-shadow: 0 0 5px rgba(195, 112, 10, 0.3);
-    transform: scale(0.95);
-    opacity: 0.5;
-  }
-  100% {
-    box-shadow: 0 0 15px rgba(195, 112, 10, 0.6);
-    transform: scale(1);
-    opacity: 0.8;
-  }
-}
