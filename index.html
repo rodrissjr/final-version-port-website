@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>rodriss.com</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;900&display=swap"
+    rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+</head>
+
+<style>
+  :root {
+    --padding: 10px;
+    --color: #e34f26;
+  }
+
+  * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    background-color: #0a1c1f;
+    font-family: 'Poppins', sans-serif;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    overflow-x: hidden;
+  }
+
+  #particles-js {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+
+  .a-button0 {
+    animation: load 2s linear forwards;
+  }
+
+  @keyframes load {
+    0% {
+      transform: translateY(20px) scale(0.5);
+      opacity: 0.05;
+    }
+  }
+
+  .a-button {
+    padding: 40px 80px;
+    background: transparent;
+    border-radius: 40px;
+    border: 0px solid var(--color);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    text-decoration: none;
+    overflow: hidden;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--color);
+    white-space: nowrap;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.8);
+    transition: all 0.3s ease-in-out;
+  }
+
+  .a-button span {
+    position: absolute;
+    width: 0;
+    left: 0;
+    height: 100%;
+    border-radius: 40px;
+    z-index: -1;
+    background-color: rgb(118, 54, 6);
+    transition: width 0.6s ease-in-out;
+  }
+
+  .a-button:hover span {
+    width: 100%;
+  }
+
+  .a-button:active {
+    transform: scale(0.8);
+  }
+
+  .footer {
+    background: #0a1c1f;
+    color: #a0aec0;
+    padding: 60px 20px 30px;
+    position: relative;
+    z-index: 1;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    margin-top: 50px;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+  }
+
+  .footer-column h3 {
+    color: #fff;
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    position: relative;
+  }
+
+  .footer-about .footer-logo {
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: #fff;
+    text-decoration: none;
+    margin-bottom: 15px;
+    display: block;
+  }
+
+  .footer-about .footer-logo span:first-child {
+    color: #e34f26;
+  }
+
+  .footer-links ul {
+    list-style: none;
+  }
+
+  .footer-links ul li {
+    margin-bottom: 10px;
+  }
+
+  .footer-links ul li a {
+    color: #a0aec0;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+
+  .footer-links ul li a:hover {
+    color: #fff;
+  }
+
+  .footer-socials .social-icons {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+  }
+
+  .footer-socials .social-icon {
+    width: 35px;
+    height: 35px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+
+  .footer-socials .social-icon:hover {
+    background: #c3700a;
+    transform: translateY(-3px);
+  }
+
+  .footer-bottom {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    text-align: center;
+  }
+
+  .welcome-statement {
+    color: rgb(206, 183, 155);
+    font-size: 2.5rem;
+    margin-top: 10px;
+    line-height: 80px;
+    font-weight: 700;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    animation: trans 2s ease-in-out forwards;
+  }
+
+  @keyframes trans {
+    0% {
+      transform: translateX(100%) rotateY(70deg);
+      opacity: 0.3;
+    }
+
+    100% {
+      transform: translateX(0) rotateY(0);
+      opacity: 1;
+    }
+  }
+
+  .welcome-statement {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    animation: trans 2s ease-in-out forwards;
+  }
+
+  .welcome-statement h1 {
+    font-size: 5rem;
+    font-weight: 900;
+    line-height: 1.1;
+    margin-bottom: 10px;
+    background: linear-gradient(135deg, #fff 0%, #e34f26 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: revealText 1s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+  }
+
+  .welcome-statement h1:nth-child(2) {
+    animation-delay: 0.3s;
+  }
+
+  .welcome-statement p {
+    color: #a0aec0;
+    font-size: 1.8rem;
+    font-weight: 300;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: revealText 1s cubic-bezier(0.77, 0, 0.175, 1) 0.6s forwards;
+  }
+
+  @keyframes revealText {
+    0% {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .welcome-statement h1 sup {
+    font-size: 14px;
+    vertical-align: top;
+    margin-left: 5px;
+    border: 1px solid #e34f26;
+    padding: 2px 6px;
+    border-radius: 4px;
+    color: #e34f26;
+    -webkit-text-fill-color: #e34f26;
+    font-weight: 600;
+  }
+
+  @media (max-width: 768px) {
+    .welcome-statement h1 {
+      font-size: 3.5rem;
+    }
+
+    .welcome-statement p {
+      font-size: 1.2rem;
+      letter-spacing: 3px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .welcome-statement h1 {
+      font-size: 2.5rem;
+    }
+
+    .welcome-statement p {
+      font-size: 1rem;
+    }
+  }
+
+  /* Preloader Styles */
+  #preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #0a1c1f;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+  }
+
+  .loader-text {
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: #fff;
+    letter-spacing: 10px;
+    text-transform: uppercase;
+    animation: pulse 1.5s infinite ease-in-out;
+  }
+
+  @keyframes pulse {
+
+    0%,
+    100% {
+      opacity: 0.3;
+      transform: scale(0.95);
+    }
+
+    50% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  .preloader-hidden {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .icons {
+    border-bottom: 5px solid #884f05;
+    padding: 15px;
+    display: flex;
+    gap: 9px;
+    flex-wrap: wrap;
+    justify-content: center;
+    position: relative;
+    animation: display 2s ease-in-out forwards;
+  }
+
+  @keyframes display {
+    0% {
+      opacity: 0;
+      transform: scale(0);
+    }
+  }
+
+  .icons a img {
+    width: 40px;
+    border-radius: 20px;
+    transition: all 0.3s ease-in-out;
+  }
+
+  /*
+    .icons a:nth-child(1) {
+      animation: move1 1s ease-in-out forwards;
+    }
+    @keyframes move1 {
+      0% {
+        transform: translateX(-40px);
+      }
+      100% {
+      }
+    }
+    .icons a:nth-child(2) {
+      animation: move 1s ease-in-out forwards;
+    }
+    @keyframes move {
+      0% {
+        transform: translateY(40px);
+      }
+      100% {
+      }
+    }
+    .icons a:nth-child(3) {
+      animation: move3 1s ease-in-out forwards;
+    }
+    @keyframes move3 {
+      0% {
+        transform: translateX(40px);
+      }
+      100% {
+      }
+    } */
+  /* just trying animation on each icon */
+  .icons a img:hover {
+    background: rgb(182, 105, 12);
+    cursor: pointer;
+    transform: scale(1.1) translateY(5px);
+  }
+
+  .icons::before {
+    content: "";
+    background-color: rgb(58, 48, 148);
+    inset: 0;
+    border-radius: 20px;
+    position: absolute;
+    z-index: -80;
+    opacity: 0.08;
+  }
+
+  .home {
+    display: flex;
+    margin: 8% auto;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 25px;
+    border-radius: 30px;
+    padding: 50px;
+    /* box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.3); */
+    background: transparent;
+    width: 100%;
+    max-width: 1100px;
+  }
+
+  @media (max-width: 663px) {
+    .home {
+      margin: 10% auto;
+      padding: 30px 20px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .welcome-statement {
+      font-size: 2rem;
+      line-height: 60px;
+    }
+
+    .welcome-statement h1 {
+      font-size: 3rem;
+      line-height: 60px;
+    }
+
+    .home {
+      padding: 30px;
+      margin: 15% auto;
+    }
+
+    .icons a img {
+      width: 35px;
+    }
+
+    .a-button {
+      padding: 30px 60px;
+      font-size: 1rem;
+    }
+
+    footer {
+      padding: 15px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .welcome-statement {
+      font-size: 1.5rem;
+      line-height: 40px;
+    }
+
+    .welcome-statement h1 {
+      font-size: 2rem;
+      line-height: 40px;
+    }
+
+    .home {
+      padding: 20px;
+      margin: 25% auto;
+      gap: 15px;
+    }
+
+    .icons {
+      padding: 10px;
+      gap: 5px;
+    }
+
+    .icons a img {
+      width: 30px;
+    }
+
+    .a-button {
+      padding: 20px 40px;
+      font-size: 0.9rem;
+    }
+
+    footer {
+      padding: 10px;
+    }
+
+    .background1 {
+      font-size: 0.9rem;
+    }
+
+    .copy-right {
+      font-size: 0.8rem;
+    }
+  }
+
+  /* Additional animations */
+  body {
+    animation: fadeIn 1s ease-in-out;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
+  }
+
+  footer {
+    animation: slideUp 1.5s ease-in-out;
+  }
+
+  @keyframes slideUp {
+    from {
+      transform: translateY(100%);
+      opacity: 0;
+    }
+
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  .profile-mini {
+    width: 180px;
+    height: 180px;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    padding: 6px;
+    background: linear-gradient(135deg, #e34f26, #c3700a);
+    box-shadow: 0 0 35px rgba(227, 79, 38, 0.7);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+    z-index: 10;
+  }
+
+  @keyframes profileReveal {
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  .profile-mini img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center 20%; /* Focus on the face area */
+    transform: scale(1.6); /* Digital zoom to fit better */
+    border: 4px solid #0a1c1f;
+  }
+
+  .a-button:active {
+    transform: scale(0.95);
+  }
+
+  .icons a {
+    animation: bounceIn 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+    animation-delay: calc(0.8s + var(--i) * 0.1s);
+    opacity: 0;
+  }
+
+  @keyframes bounceIn {
+    0% {
+      transform: scale(0.3);
+      opacity: 0;
+    }
+
+    50% {
+      transform: scale(1.05);
+    }
+
+    70% {
+      transform: scale(0.9);
+    }
+
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+</style>
+
+<body>
+  <div id="preloader">
+    <div class="loader-text">RODRISS</div>
+  </div>
+  <div id="particles-js"></div>
+  <!--lets seee-->
+  <div class="home">
+    <div class="profile-mini">
+      <img src="assets/images/james.jpg" alt="James Rodriss">
+    </div>
+    <div class="icons">
+      <a href="https://www.facebook.com/selvester.rodriss.5" target="_blank" style="--i:0"> <img
+          src="assets/images/fb.png" alt="Facebook" /></a><a href="https://www.instagram.com/iamrodriss_jr/"
+        target="_blank" style="--i:1"> <img src="assets/images/ig.png" alt="Instagram" /> </a><a
+        href="mailto:jamesrodriss43@gmail.com" target="_blank" style="--i:2"><img src="assets/images/info.png"
+          alt="Email" /></a>
+    </div>
+    <div class="welcome-statement">
+      <h1>Welcome to my<sup>TM</sup></h1>
+      <h1>portfolio website</h1>
+      <p>Web Developer & Designer</p>
+    </div>
+    <div class="a-button0">
+      <a href="pages/portifolio.html" class="a-button"><span></span>TAKE A TOUR</a>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-column footer-about">
+        <a href="#" class="footer-logo">
+          <span>JM</span>rodriss<sup>TM</sup>
+        </a>
+        <p>
+          Crafting high-end digital experiences with a focus on modern design,
+          performance, and security.
+        </p>
+      </div>
+
+      <div class="footer-column footer-links">
+        <h3>Explore</h3>
+        <ul>
+          <li><a href="pages/portifolio.html">Portfolio</a></li>
+          <li><a href="pages/cv.html">Resume</a></li>
+          <li><a href="mailto:jamesrodriss43@gmail.com">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column footer-socials">
+        <h3>Follow Me</h3>
+        <div class="social-icons">
+          <a href="https://github.com/rodrissjr" class="social-icon" target="_blank"><i class="fab fa-github"></i></a>
+          <a href="https://www.instagram.com/iamrodriss_jr/" class="social-icon" target="_blank"><i
+              class="fab fa-instagram"></i></a>
+          <a href="https://www.facebook.com/selvester.rodriss.5" class="social-icon" target="_blank"><i
+              class="fab fa-facebook-f"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="footer-container" style="display: flex; justify-content: center;">
+        <p>&copy; 2024 James Rodriss. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+  <script>
+    particlesJS("particles-js", {
+      "particles": {
+        "number": {
+          "value": 80,
+          "density": {
+            "enable": true,
+            "value_area": 800
+          }
+        },
+        "color": {
+          "value": "#ffffff"
+        },
+        "shape": {
+          "type": "circle",
+          "stroke": {
+            "width": 0,
+            "color": "#000000"
+          },
+          "polygon": {
+            "nb_sides": 5
+          }
+        },
+        "opacity": {
+          "value": 0.5,
+          "random": false,
+          "anim": {
+            "enable": false,
+            "speed": 1,
+            "opacity_min": 0.1,
+            "sync": false
+          }
+        },
+        "size": {
+          "value": 3,
+          "random": true,
+          "anim": {
+            "enable": false,
+            "speed": 40,
+            "size_min": 0.1,
+            "sync": false
+          }
+        },
+        "line_linked": {
+          "enable": true,
+          "distance": 150,
+          "color": "#ffffff",
+          "opacity": 0.4,
+          "width": 1
+        },
+        "move": {
+          "enable": true,
+          "speed": 6,
+          "direction": "none",
+          "random": false,
+          "straight": false,
+          "out_mode": "out",
+          "bounce": false,
+          "attract": {
+            "enable": false,
+            "rotateX": 600,
+            "rotateY": 1200
+          }
+        }
+      },
+      "interactivity": {
+        "detect_on": "canvas",
+        "events": {
+          "onhover": {
+            "enable": true,
+            "mode": "repulse"
+          },
+          "onclick": {
+            "enable": true,
+            "mode": "push"
+          },
+          "resize": true
+        },
+        "modes": {
+          "grab": {
+            "distance": 400,
+            "line_linked": {
+              "opacity": 1
+            }
+          },
+          "bubble": {
+            "distance": 400,
+            "size": 40,
+            "duration": 2,
+            "opacity": 8,
+            "speed": 3
+          },
+          "repulse": {
+            "distance": 200,
+            "duration": 0.4
+          },
+          "push": {
+            "particles_nb": 4
+          },
+          "remove": {
+            "particles_nb": 2
+          }
+        }
+      },
+      "retina_detect": true
+    });
+
+    // Preloader Handler
+    window.addEventListener('load', () => {
+      const preloader = document.getElementById('preloader');
+      setTimeout(() => {
+        preloader.classList.add('preloader-hidden');
+      }, 1000);
+    });
+  </script>
+</body>
+
+</html>
