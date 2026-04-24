@@ -19,10 +19,14 @@
     --color: #e34f26;
   }
 
-  * {
+  *, *::before, *::after {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+  }
+
+  html {
+    overflow-x: hidden;
   }
 
   body {
@@ -196,8 +200,8 @@
 
   @keyframes trans {
     0% {
-      transform: translateX(100%) rotateY(70deg);
-      opacity: 0.3;
+      transform: translateX(50px) rotateY(40deg);
+      opacity: 0;
     }
 
     100% {
@@ -221,7 +225,10 @@
     margin-bottom: 10px;
     background: linear-gradient(135deg, #fff 0%, #e34f26 100%);
     -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
+    color: transparent;
     opacity: 0;
     transform: translateY(30px);
     animation: revealText 1s cubic-bezier(0.77, 0, 0.175, 1) forwards;
