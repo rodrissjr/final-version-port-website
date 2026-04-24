@@ -20,6 +20,8 @@
 </head>
 
 <body>
+  <div class="cursor-dot"></div>
+  <div class="cursor-outline"></div>
   <!-- animaton on loading -->
   <div class="bars-animation">
     <div class="bar1" style="--i: 6"></div>
@@ -44,6 +46,8 @@
         <li><a href="#services">Services</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#skills">Skills</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
     </div>
     <div class="scroll-progress"></div>
@@ -155,6 +159,38 @@
     </div>
   </div>
 
+  <div class="experience-container" id="experience" data-aos="fade-up">
+    <header>
+      <h1>My Journey</h1>
+      <p class="subtitle">Experience & Education</p>
+    </header>
+    <div class="timeline">
+      <div class="timeline-item" data-aos="fade-right">
+        <div class="timeline-dot"></div>
+        <div class="timeline-date">2025 - Present</div>
+        <div class="timeline-content">
+          <h3>Senior Web Developer</h3>
+          <p>Leading front-end development for various high-end client projects, focusing on performance and scalability.</p>
+        </div>
+      </div>
+      <div class="timeline-item" data-aos="fade-left">
+        <div class="timeline-dot"></div>
+        <div class="timeline-date">2024 - 2025</div>
+        <div class="timeline-content">
+          <h3>Web Designer</h3>
+          <p>Crafted beautiful and intuitive user interfaces for multiple tech startups in Arusha.</p>
+        </div>
+      </div>
+      <div class="timeline-item" data-aos="fade-right">
+        <div class="timeline-dot"></div>
+        <div class="timeline-date">2023 - 2024</div>
+        <div class="timeline-content">
+          <h3>IT Specialist</h3>
+          <p>Maintained and optimized network infrastructure while building custom internal web tools.</p>
+        </div>
+      </div>
+    </div>
+  </div>
   <div class="services-container" id="services" data-aos="fade-up">
     <header>
       <h1>My Services</h1>
@@ -209,7 +245,7 @@
     </div>
   </div>
 
-  <div class="container" data-aos="" id="container">
+  <div class="container" data-aos="" id="skills">
     <header>
       <h1>My Skills</h1>
       <p class="subtitle">Technologies I specialize in</p>
@@ -329,6 +365,40 @@
     </div>
   </div>
 
+  <div class="contact-container" id="contact" data-aos="fade-up">
+    <header>
+      <h1>Get In Touch</h1>
+      <p class="subtitle">Let's work together on your next project</p>
+    </header>
+    <div class="contact-content">
+      <form class="contact-form" id="portfolio-form">
+        <div class="form-group">
+          <input type="text" name="name" placeholder="Your Name" required>
+        </div>
+        <div class="form-group">
+          <input type="email" name="email" placeholder="Your Email" required>
+        </div>
+        <div class="form-group">
+          <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+        </div>
+        <button type="submit" class="project-link" style="border: none; cursor: pointer; width: 100%;">Send Message</button>
+      </form>
+      <div class="contact-info">
+        <div class="info-item">
+          <i class="fas fa-envelope"></i>
+          <p>jamesrodriss43@gmail.com</p>
+        </div>
+        <div class="info-item">
+          <i class="fas fa-phone"></i>
+          <p>+(255) 618389607</p>
+        </div>
+        <div class="info-item">
+          <i class="fas fa-map-marker-alt"></i>
+          <p>Arusha, Tanzania</p>
+        </div>
+      </div>
+    </div>
+  </div>
   <footer class="footer">
     <div class="footer-container">
       <!-- Branding Column -->
@@ -350,6 +420,9 @@
           <li><a href="#container2"><i class="fas fa-chevron-right"></i> About</a></li>
           <li><a href="#services"><i class="fas fa-chevron-right"></i> Services</a></li>
           <li><a href="#projects"><i class="fas fa-chevron-right"></i> Projects</a></li>
+          <li><a href="#skills"><i class="fas fa-chevron-right"></i> Skills</a></li>
+          <li><a href="#experience"><i class="fas fa-chevron-right"></i> Experience</a></li>
+          <li><a href="#contact"><i class="fas fa-chevron-right"></i> Contact</a></li>
         </ul>
       </div>
 
@@ -454,6 +527,32 @@
   </script>
   <script>
     (function () { if (!window.chatbase || window.chatbase("getState") !== "initialized") { window.chatbase = (...arguments) => { if (!window.chatbase.q) { window.chatbase.q = [] } window.chatbase.q.push(arguments) }; window.chatbase = new Proxy(window.chatbase, { get(target, prop) { if (prop === "q") { return target.q } return (...args) => target(prop, ...args) } }) } const onLoad = function () { const script = document.createElement("script"); script.src = "https://www.chatbase.co/embed.min.js"; script.id = "ErXJH-GgB0CmHNxIRmXko"; script.domain = "www.chatbase.co"; document.body.appendChild(script) }; if (document.readyState === "complete") { onLoad() } else { window.addEventListener("load", onLoad) } })();
+  </script>
+  <script>
+    const cursorDot = document.querySelector(".cursor-dot");
+    const cursorOutline = document.querySelector(".cursor-outline");
+    window.addEventListener("mousemove", (e) => {
+      const posX = e.clientX;
+      const posY = e.clientY;
+      cursorDot.style.left = `${posX}px`;
+      cursorDot.style.top = `${posY}px`;
+      cursorOutline.animate({
+        left: `${posX}px`,
+        top: `${posY}px`
+      }, { duration: 500, fill: "forwards" });
+    });
+    const contactForm = document.getElementById("portfolio-form");
+    if (contactForm) {
+      contactForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const name = contactForm.querySelector("[name='name']").value;
+        const email = contactForm.querySelector("[name='email']").value;
+        const message = contactForm.querySelector("[name='message']").value;
+        const subject = `New Portfolio Message from ${name}`;
+        const body = `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`;
+        window.location.href = `mailto:jamesrodriss43@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      });
+    }
   </script>
 </body>
 

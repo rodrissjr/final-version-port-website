@@ -4,7 +4,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>rodriss.com</title>
+  <title>James Rodriss | Senior Web Developer & UI/UX Designer</title>
+    <meta name="description" content="Portfolio of James Rodriss, a Senior Web Developer specializing in premium digital experiences, security, and AI integration.">
+    <meta name="keywords" content="Web Developer, UI/UX Designer, Arusha, Tanzania, Senior Developer, Portfolio">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;900&display=swap"
     rel="stylesheet">
@@ -479,43 +481,8 @@
     footer {
       padding: 15px;
     }
-  }
 
   @media (max-width: 480px) {
-    .welcome-statement {
-      font-size: 1.5rem;
-      line-height: 40px;
-    }
-
-    .welcome-statement h1 {
-      font-size: 2rem;
-      line-height: 40px;
-    }
-
-    .home {
-      padding: 20px;
-      margin: 25% auto;
-      gap: 15px;
-    }
-
-    .icons {
-      padding: 10px;
-      gap: 5px;
-    }
-
-    .icons a img {
-      width: 30px;
-    }
-
-    .a-button {
-      padding: 20px 40px;
-      font-size: 0.9rem;
-    }
-
-    footer {
-      padding: 10px;
-    }
-
     .background1 {
       font-size: 0.9rem;
     }
@@ -623,6 +590,8 @@
 </style>
 
 <body>
+  <div class="cursor-dot"></div>
+  <div class="cursor-outline"></div>
   <div id="preloader">
     <div class="loader-text">RODRISS</div>
   </div>
@@ -809,6 +778,20 @@
   </script>
   <script>
     (function () { if (!window.chatbase || window.chatbase("getState") !== "initialized") { window.chatbase = (...arguments) => { if (!window.chatbase.q) { window.chatbase.q = [] } window.chatbase.q.push(arguments) }; window.chatbase = new Proxy(window.chatbase, { get(target, prop) { if (prop === "q") { return target.q } return (...args) => target(prop, ...args) } }) } const onLoad = function () { const script = document.createElement("script"); script.src = "https://www.chatbase.co/embed.min.js"; script.id = "ErXJH-GgB0CmHNxIRmXko"; script.domain = "www.chatbase.co"; document.body.appendChild(script) }; if (document.readyState === "complete") { onLoad() } else { window.addEventListener("load", onLoad) } })();
+  </script>
+  <script>
+    const cursorDot = document.querySelector(".cursor-dot");
+    const cursorOutline = document.querySelector(".cursor-outline");
+    window.addEventListener("mousemove", (e) => {
+      const posX = e.clientX;
+      const posY = e.clientY;
+      cursorDot.style.left = `${posX}px`;
+      cursorDot.style.top = `${posY}px`;
+      cursorOutline.animate({
+        left: `${posX}px`,
+        top: `${posY}px`
+      }, { duration: 500, fill: "forwards" });
+    });
   </script>
 </body>
 
