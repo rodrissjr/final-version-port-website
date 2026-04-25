@@ -309,26 +309,91 @@
     transition: opacity 0.5s ease, visibility 0.5s ease;
   }
 
-  .loader-text {
-    font-size: 1.5rem;
-    font-weight: 300;
-    color: #fff;
-    letter-spacing: 10px;
-    text-transform: uppercase;
-    animation: pulse 1.5s infinite ease-in-out;
+  .brand-loader {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
   }
 
-  @keyframes pulse {
+  .circular-loader {
+    width: 60px;
+    height: 60px;
+    animation: rotate 2s linear infinite;
+  }
 
-    0%,
+  .loader-path {
+    stroke-dasharray: 1, 200;
+    stroke-dashoffset: 0;
+    animation: dash 1.5s ease-in-out infinite, color-change 6s ease-in-out infinite;
+    stroke-linecap: round;
+  }
+
+  @keyframes rotate {
     100% {
-      opacity: 0.3;
-      transform: scale(0.95);
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes dash {
+    0% {
+      stroke-dasharray: 1, 200;
+      stroke-dashoffset: 0;
     }
 
     50% {
-      opacity: 1;
-      transform: scale(1);
+      stroke-dasharray: 89, 200;
+      stroke-dashoffset: -35;
+    }
+
+    100% {
+      stroke-dasharray: 89, 200;
+      stroke-dashoffset: -124;
+    }
+  }
+
+  @keyframes color-change {
+
+    0%,
+    100% {
+      stroke: #e34f26;
+    }
+
+    33% {
+      stroke: #4ca1af;
+    }
+
+    66% {
+      stroke: #c3700a;
+    }
+  }
+
+  .loader-text-premium {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.7);
+    letter-spacing: 12px;
+    text-transform: uppercase;
+    position: relative;
+    overflow: hidden;
+    margin-right: -12px;
+    /* offset letter-spacing */
+  }
+
+  .loader-text-premium::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.9), transparent);
+    animation: shimmer 2s infinite ease-in-out;
+  }
+
+  @keyframes shimmer {
+    100% {
+      left: 100%;
     }
   }
 
@@ -600,7 +665,12 @@
   <div class="cursor-dot"></div>
   <div class="cursor-outline"></div>
   <div id="preloader">
-    <div class="loader-text">RODRISS</div>
+    <div class="brand-loader">
+      <svg class="circular-loader" viewBox="25 25 50 50">
+        <circle class="loader-path" cx="50" cy="50" r="20" fill="none" stroke-width="3" />
+      </svg>
+      <div class="loader-text-premium">RODRISS</div>
+    </div>
   </div>
   <div id="particles-js"></div>
   <!--lets seee-->
