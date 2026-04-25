@@ -150,6 +150,10 @@
 
 .info1 .info1-intro h1 {
   color: #c3700a;
+  -webkit-text-fill-color: #c3700a;
+  background: none;
+  -webkit-background-clip: unset;
+  background-clip: unset;
   display: block;
   white-space: nowrap; 
   max-width: 100%;
@@ -177,6 +181,7 @@
   transform: translateY(-50%);
   display: inline-block;
   color: transparent;
+  -webkit-text-fill-color: transparent;
   -webkit-text-stroke: 0.5px #c3700a;
   white-space: nowrap;
   opacity: 0;
@@ -243,7 +248,7 @@
   background: #c3700a;
   padding: 12px 27px;
   border-radius: 20px;
-  box-shadow: 0 8px 20px rgba(190, 135, 7, 0.6);
+  box-shadow: none;
   color: white;
   font-weight: 600;
   font-size: 1.05rem;
@@ -257,7 +262,7 @@
   background: #c3700a;
   padding: 12px 27px;
   border-radius: 20px;
-  box-shadow: 0 8px 20px rgba(190, 135, 7, 0.6);
+  box-shadow: none;
   color: white;
   font-weight: 600;
   font-size: 1.05rem;
